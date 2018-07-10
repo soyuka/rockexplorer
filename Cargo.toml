@@ -1,0 +1,33 @@
+[package]
+name = "explorer"
+version = "0.0.0"
+publish = false
+
+[dependencies]
+serde = "1.0"
+serde_derive = "1.0"
+serde_json = "1.0"
+pretty-bytes = "0.2.2"
+chrono = "0.4.4"
+
+[dependencies.rocket]
+git = "https://github.com/SergioBenitez/Rocket"
+branch = "master"
+version = "0.4.0-dev"
+
+[dependencies.mime_guess]
+git = "https://github.com/soyuka/mime_guess"
+branch = "more-mime"
+
+[dependencies.rocket_contrib]
+git = "https://github.com/SergioBenitez/Rocket"
+branch = "master"
+version = "0.4.0-dev"
+default-features = false
+features = ["tera_templates"]
+
+[dependencies.rocket_codegen]
+git = "https://github.com/SergioBenitez/Rocket"
+branch = "master"
+version = "0.4.0-dev"
+

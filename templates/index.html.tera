@@ -1,0 +1,65 @@
+{% extends "base" %}
+
+{% block content %}
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Type</th>
+          <th class="left">
+            ⇵
+            📂
+            <input type="text", value="{{ path }}" />
+          </th>
+          <th>Time ▼</th>
+          <th>Size</th>
+          <th>🕵 explore</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for s in items %}
+          <tr>
+            <td class="small">
+              <input type="checkbox" />
+            </td>
+            <td class="small" title="{{ s.file_type }}">
+              {% if s.file_type == 'directory' %}
+                📁
+              {% elif s.file_type == 'video' %}
+                🎞
+              {% elif s.file_type == 'audio' %}
+                🎵
+              {% elif s.file_type == 'text' %}
+                📄
+              {% elif s.file_type == 'image' %}
+                📷
+              {% else %}
+                📦
+              {% endif %}
+            </td>
+            <td class="name"><a href="{{s.path}}">{{s.name}}</a></td>
+            <td class="time">{{s.mtime}}</td>
+            <td class="size">{{s.size}}</td>
+            <td class="actions">
+              {% if s.ext == 'zip' or s.ext == 'rar' %}
+                <span title="extract"><a href="{{s.path}}?action=extract">🗃</a></span>
+              {% endif %}
+
+              {% if s.file_type == 'directory' %}
+                <span title="compress"><a href="{{s.path}}?action=compress">🗜</a></span>
+              {% else %}
+                <span title="download"><a href="{{s.path}}">🔗</a></span>
+              {% endif %}
+
+              {% if s.file_type == 'video' %}
+                <span title="subtitles"><a href="{{s.path}}?action=subtitles">🚩</a></span>
+              {% endif %}
+
+              <span title="trash">🗑</span>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+{% endblock content %}

@@ -1,0 +1,51 @@
+body {
+  font-family: sans-serif;
+  width: 80%;
+  margin: 10px auto;
+  color: #303030;
+}
+
+table {
+  width: 100%;
+  margin: 10px 0;
+  border: 1px solid #303030;
+  border-collapse: collapse;
+}
+
+input[type="text"] {
+  border: 0;
+}
+
+td, th {
+  border: 1px solid #303030;
+  padding: 2px 5px;
+}
+
+.left {
+  text-align: left;
+}
+
+.small {
+  width: 40px;
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.time {
+  width: 160px;
+  text-align: center;
+}
+
+.size {
+  width: 100px;
+  text-align: right;
+}
+
+.actions {
+  width: 100px;
+  text-align: center;
+}
+
